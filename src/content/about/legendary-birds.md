@@ -2,7 +2,7 @@
 
 title: "Aves Legendarias de Kanto"
 author: 'María Infantes'
-img: '../../legendary-birds.png'
+img: '../../../legendary-birds.png'
 readtime: 224
 description: "Conoce a Articuno, Zapdos y Moltres, los Pokémon legendarios de la región de Kanto."
 ---

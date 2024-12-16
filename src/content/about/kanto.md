@@ -2,7 +2,7 @@
 
 title: 'Región de Kanto'
 author: 'María Infantes'
-img: '../../kanto.png'
+img: '../../../kanto.png'
 readtime: 224
 description: 'Explora la región original del mundo Pokémon, hogar de los primeros 151 Pokémon.'
 ---

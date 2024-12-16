@@ -8,8 +8,8 @@ interface IntPokeListProps {
 
 export default function PokeList(props: IntPokeListProps) {
   const createPokeList = () => {
-    return props.pokedex.map((pokemon: IntPokemon) => {
-      return <Card pokemon={pokemon} />;
+    return props.pokedex.map((pokemon: IntPokemon, index: number) => {
+      return <Card key={index} pokemon={pokemon} />;
     });
   };
 

@@ -2,7 +2,7 @@
 
 title: '¡Bienvenido a nuestra Pokédex digital!'
 author: 'María Infantes'
-img: '../../spinner-pokeball.png'
+img: '../../../spinner-pokeball.png'
 readtime: 224
 description: 'Sobre la Pokédex'
 ---

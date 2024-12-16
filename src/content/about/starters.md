@@ -2,7 +2,7 @@
 
 title: "Starters de Kanto"
 author: 'María Infantes'
-img: '../../starters.png'
+img: '../../../starters.png'
 readtime: 224
 description: "Conoce a los tres Pokémon iniciales de la primera generación: Bulbasaur, Charmander y Squirtle."
 ---
