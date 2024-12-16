@@ -2,9 +2,6 @@
   "name": "poke-fan-app",
   "type": "module",
   "version": "0.1.0",
-  "engines": {
-    "node": ">=20"
-  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",

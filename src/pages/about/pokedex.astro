@@ -1,14 +1,14 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
 
 const about = await getCollection("about");
 
-const pokedex = about.find((aboutPage) => {
+const pokedex = about.find((aboutPage: { slug: string; }) => {
   return aboutPage.slug === "pokedex";
 }); // Accede al contenido de la página de pokedex
 
-const { Content } = await render(pokedex!);
+const { Content } = await pokedex.render();
 ---
 
 <MarkdownPostLayout frontmatter={pokedex?.data}>
