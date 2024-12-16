@@ -1,0 +1,75 @@
+---
+import Pokedex from "../components/Pokedex.astro";
+import Layout from "../layouts/Layout.astro";
+
+import Navigation from "../components/Navigation.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Layout>
+      <header>
+        <div class="circle-blue"></div>
+        <div class="pokedex-light"></div>
+        <h1>Pokedex</h1>
+        <Navigation />
+      </header>
+      <Pokedex />
+    </Layout>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+      Consolas, "DejaVu Sans Mono", monospace;
+
+    color: #232323;
+  }
+
+  header {
+    display: flex;
+    padding: 1rem;
+    background: linear-gradient(135deg, #e63946, #d62828);
+    border-radius: 25px 25px 0 0;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0px 4px 8px rgba(0, 0, 0, 0.3),
+      /* Sombra general */ inset 0px -4px 6px rgba(0, 0, 0, 0.2),
+      /* Sombra interna en la parte inferior */ inset 0px 4px 4px
+        rgba(255, 255, 255, 0.2); /* Brillo interno en la parte superior */
+
+    .circle-blue {
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle, #4da6ff 0%, #0066cc 100%);
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .pokedex-light {
+      width: 12px;
+      height: 12px;
+      background: #ffd700;
+      border-radius: 50%;
+      position: absolute;
+      top: 30px;
+      left: 80px;
+      box-shadow: 0px 0px 8px rgba(255, 215, 0, 0.8);
+    }
+  }
+
+  h1 {
+    display: flex;
+    margin: 1rem auto;
+    color: #232323;
+  }
+</style>

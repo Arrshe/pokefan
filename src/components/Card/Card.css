@@ -1,0 +1,119 @@
+.card {
+  width: 100%;
+  max-width: 200px;
+  margin: 1rem;
+  padding: 1rem;
+
+
+  background-color: #232323;
+  color: #dedede;
+  border-radius: 0 0 0 4rem;
+  border: 2px solid #dedede;
+}
+
+.card__header {
+  width: 100%;
+}
+
+
+
+.card__sprite {
+  width: 100%;
+  border: 2px solid #dedede;
+  border-radius: 1rem 0;
+  margin: 1rem 0;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card__types-container {
+  display: flex;
+  width: 100%;
+}
+
+.card__type {
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  width: fit-content;
+}
+
+/* Plantilla CSS para colores por tipo de Pokémon */
+.fire {
+  background-color: #ff4500; /* Naranja intenso */
+  color: #ffffff; /* Texto blanco */
+}
+
+.water {
+  background-color: #1e90ff; /* Azul brillante */
+  color: #ffffff; /* Texto blanco */
+}
+
+.grass {
+  background-color: #32cd32; /* Verde brillante */
+  color: #ffffff; /* Texto blanco */
+}
+
+.electric {
+  background-color: #ffd700; /* Amarillo brillante */
+  color: #000000; /* Texto negro */
+}
+
+.ice {
+  background-color: #add8e6; /* Azul claro */
+  color: #000000; /* Texto negro */
+}
+
+.fighting {
+  background-color: #c03028; /* Rojo oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+.poison {
+  background-color: #a040a0; /* Púrpura */
+  color: #ffffff; /* Texto blanco */
+}
+
+.ground {
+  background-color: #e0c068; /* Beige arena */
+  color: #000000; /* Texto negro */
+}
+
+.flying {
+  background-color: #a890f0; /* Lila claro */
+  color: #ffffff; /* Texto blanco */
+}
+
+.psychic {
+  background-color: #ff1493; /* Rosa fuerte */
+  color: #ffffff; /* Texto blanco */
+}
+
+.bug {
+  background-color: #a8b820; /* Verde oliva */
+  color: #ffffff; /* Texto blanco */
+}
+
+.rock {
+  background-color: #b8a038; /* Marrón dorado */
+  color: #ffffff; /* Texto blanco */
+}
+
+.ghost {
+  background-color: #705898; /* Morado oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+.dragon {
+  background-color: #7038f8; /* Azul morado */
+  color: #ffffff; /* Texto blanco */
+}
+
+.normal {
+  background-color: #a8a878; /* Gris claro */
+  color: #000000; /* Texto negro */
+}

@@ -1,0 +1,81 @@
+---
+import PokeList from "./Poke-list/Poke-list";
+import type { IntPokemon } from "../core/schemas/IntPokemon.interface";
+
+const url = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
+const getPokedex = async (): Promise<IntPokemon[]> => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const results = data.results;
+
+    const createTypesArray = (
+      types: { slot: number; type: { name: string } }[]
+    ) => {
+      return types.map((type) => type.type.name);
+    };
+
+    return Promise.all(
+      results.map(
+        async (pokemon: { name: string; url: string }): Promise<IntPokemon> => {
+          const response = await fetch(pokemon.url);
+          const data = await response.json();
+          return {
+            name: data.name,
+            id: data.id,
+            types: createTypesArray(data.types),
+            sprite: data.sprites.front_default,
+          };
+        }
+      )
+    );
+  } catch (error: any) {
+    throw new Error(`Error en API (${url}):`, error.message || error);
+  }
+};
+
+const pokedex = await getPokedex();
+---
+
+<div id="container">
+  <main>
+    {
+      pokedex ? (
+        <PokeList pokedex={pokedex} />
+      ) : (
+        <div class="spinner-container">
+          <img
+            class="spinner"
+            src="../../public/spinner-pokeball.png"
+            alt="spinner pokeball"
+          />
+          <p>Loading...</p>
+        </div>
+      )
+    }
+  </main>
+</div>
+
+<style>
+  main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #d62828;
+
+    .spinner-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spinner {
+      display: flex;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+  }
+</style>

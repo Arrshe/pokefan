@@ -1,0 +1,16 @@
+---
+import { getCollection, render } from "astro:content";
+import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
+
+const about = await getCollection("about");
+
+const starters = about.find((aboutPage) => {
+  return aboutPage.slug === "starters";
+}); // Accede al contenido de la página de starters
+
+const { Content } = await render(starters!);
+---
+
+<MarkdownPostLayout frontmatter={starters?.data}>
+  <Content />
+</MarkdownPostLayout>

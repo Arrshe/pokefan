@@ -1,0 +1,16 @@
+---
+import { getCollection, render } from "astro:content";
+import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
+
+const about = await getCollection("about");
+
+const legendaryBirds = about.find((aboutPage) => {
+  return aboutPage.slug === "legendary-birds";
+}); // Accede al contenido de la página de legendary-birds
+
+const { Content } = await render(legendaryBirds!);
+---
+
+<MarkdownPostLayout frontmatter={legendaryBirds?.data}>
+  <Content />
+</MarkdownPostLayout>

@@ -1,0 +1,132 @@
+---
+import Navigation from "../components/Navigation.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body>
+    <header>
+      <div class="circle-blue"></div>
+      <div class="pokedex-light"></div>
+      <Navigation />
+    </header>
+    <main>
+      <h1>{frontmatter.title}</h1>
+      <img src={frontmatter.img} alt="" />
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+    header {
+    display: flex;
+    padding: 1rem;
+    background: linear-gradient(135deg, #e63946, #d62828);
+    border-radius: 25px 25px 0 0;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow:
+      0px 4px 8px rgba(0, 0, 0, 0.3),
+      /* Sombra general */ inset 0px -4px 6px rgba(0, 0, 0, 0.2),
+      /* Sombra interna en la parte inferior */ inset 0px 4px 4px
+        rgba(255, 255, 255, 0.2); /* Brillo interno en la parte superior */
+
+    .circle-blue {
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle, #4da6ff 0%, #0066cc 100%);
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .pokedex-light {
+      width: 12px;
+      height: 12px;
+      background: #ffd700;
+      border-radius: 50%;
+      position: absolute;
+      top: 30px;
+      left: 80px;
+      box-shadow: 0px 0px 8px rgba(255, 215, 0, 0.8);
+    }
+  }
+
+  body {
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+      Consolas, "DejaVu Sans Mono", monospace;
+
+    color: #ecf0f1;
+    background-color: #232323;
+  }
+
+  main {
+    padding: 1.5rem;
+    color: #ecf0f1;
+    background-color: #232323;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-align: center;
+    color: #d62828;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #0066cc;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    list-style-type: disc;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: #3498db;
+    text-decoration: none;
+    border-bottom: 1px dashed #3498db;
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    color: #2ecc71;
+    border-bottom-color: #2ecc71;
+  }
+
+  code {
+    font-family: "Courier New", monospace;
+    background: #ecf0f1;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    color: #e74c3c;
+  }
+
+  img {
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem auto;
+  }
+</style>
