@@ -8,7 +8,7 @@ const starters = about.find((aboutPage: { slug: string; }) => {
   return aboutPage.slug === "starters";
 }); // Accede al contenido de la página de starters
 
-const { Content } = await starters.render();
+const { Content } = await starters!.render();
 ---
 
 <MarkdownPostLayout frontmatter={starters?.data}>

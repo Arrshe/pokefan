@@ -8,7 +8,7 @@ const kanto = about.find((aboutPage: { slug: string; }) => {
   return aboutPage.slug === "kanto";
 }); // Accede al contenido de la página de Kanto
 
-const { Content } = await kanto.render();
+const { Content } = await kanto!.render();
 ---
 
 <MarkdownPostLayout frontmatter={kanto?.data}>

@@ -8,7 +8,7 @@ const legendaryBirds = about.find((aboutPage: { slug: string; }) => {
   return aboutPage.slug === "legendary-birds";
 }); // Accede al contenido de la página de legendary-birds
 
-const { Content } = await legendaryBirds.render();
+const { Content } = await legendaryBirds!.render();
 ---
 
 <MarkdownPostLayout frontmatter={legendaryBirds?.data}>
